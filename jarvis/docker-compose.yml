@@ -111,7 +111,7 @@ services:
   code-service:
     build: ./services/code-service
     ports:
-      - "8004:8004"
+      - "8006:8006"
     environment:
       - REDIS_URL=redis://redis:6379
       - POSTGRES_URL=postgresql://jarvis:jarvis_password@postgres:5432/jarvis
@@ -128,7 +128,7 @@ services:
   learning-service:
     build: ./services/learning-service
     ports:
-      - "8005:8005"
+      - "8007:8007"
     environment:
       - REDIS_URL=redis://redis:6379
       - POSTGRES_URL=postgresql://jarvis:jarvis_password@postgres:5432/jarvis

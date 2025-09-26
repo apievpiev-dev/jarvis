@@ -7,10 +7,13 @@ resources:
   - namespace.yaml
   - configmap.yaml
   - secret.yaml
+  - volumes.yaml
   - postgres.yaml
   - redis.yaml
   - api-gateway.yaml
   - web-service.yaml
+  - code-service.yaml
+  - learning-service.yaml
   - monitoring.yaml
 
 commonLabels:
