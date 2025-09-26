@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Демонстрация Jarvis AI Assistant
+Демонстрация Jarvis AI Assistant (локальная версия)
 Автор: Jarvis AI Assistant
 Версия: 1.0.0
 """
@@ -11,9 +11,9 @@ import time
 
 def test_api():
     """Тестирование API"""
-    base_url = "http://194.247.186.190:8000"
+    base_url = "http://localhost:8000"
     
-    print("🤖 Jarvis AI Assistant - Демонстрация")
+    print("🤖 Jarvis AI Assistant - Демонстрация (Локальная)")
     print("=" * 50)
     
     # Проверка здоровья
@@ -87,7 +87,8 @@ def test_api():
     
     print("\n" + "=" * 50)
     print("🎉 Демонстрация завершена!")
-    print("🌐 Веб-интерфейс доступен по адресу: http://194.247.186.190:8000")
+    print("🌐 Локальный веб-интерфейс: http://localhost:8000")
+    print("🌐 Внешний веб-интерфейс: http://194.247.186.190:8000")
     print("📚 API документация: http://194.247.186.190:8000/docs")
 
 if __name__ == "__main__":

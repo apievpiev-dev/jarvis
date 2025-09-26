@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  # База данных
+  # PostgreSQL Database
   postgres:
     image: postgres:15
     environment:
@@ -15,8 +15,9 @@ services:
       - "5432:5432"
     networks:
       - jarvis-network
+    restart: unless-stopped
 
-  # Redis для очередей сообщений
+  # Redis Message Queue
   redis:
     image: redis:7-alpine
     ports:
@@ -25,15 +26,18 @@ services:
       - redis_data:/data
     networks:
       - jarvis-network
+    restart: unless-stopped
 
   # Simple API Service
   simple-api:
     build: ./services/simple-api
     ports:
-      - "194.247.186.190:8000:8000"
+      - "8000:8000"
     environment:
       - REDIS_URL=redis://redis:6379
       - POSTGRES_URL=postgresql://jarvis:jarvis_password@postgres:5432/jarvis
+      - HOST=0.0.0.0
+      - PORT=8000
     depends_on:
       - redis
       - postgres
